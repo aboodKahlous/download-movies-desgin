@@ -1,0 +1,227 @@
+// header{
+//     .navbar{
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         z-index: 1;
+//         width: 100%;
+//         height: 60px;
+//         .logo{
+//             display: inline-block;
+//             margin-left: 20px;
+//             h1{
+//                 padding: 10px;
+//                 font-family: serif;
+//                 color: #333;
+//             }
+//             .open{
+//                 display: none;
+//             }
+//         }
+//         nav{
+//             float: right;
+//             display: block !important;
+//             ul{
+//                 margin-right: 20px;
+//                 li{
+//                     position: relative;
+//                     display: inline-block;
+//                     padding: 20px;
+//                     font-weight: bold;
+//                     font-size: 20px;
+//                     a{
+//                         color: #333;
+//                         font-weight: bold;
+//                         font-family: serif;
+//                     }
+//                     &:before{
+//                         content: '';
+//                         position: absolute;
+//                         bottom: 12px;
+//                         left: 10px;
+//                         height: 3px;
+//                         width: 0;
+//                         background-color: rgb(0, 162, 255);
+//                         transition: all .4s ease-in;
+//                     }
+//                    &:hover:before{
+//                        width: 80%;
+//                    }
+//                 }
+//                 .close{
+//                     display: none;
+//                 }
+//             }
+//         }
+
+//         @media  (max-width : 1100px){
+//             display: block;
+//             height: 100%;
+//             .logo{
+//                 width: 100%;
+//                 background-color: rgba(0,0,0,1);
+//                 margin-left: 0;
+//                 h1{
+//                     color: #fff;
+//                     margin-left: 5px;
+//                 }
+//                 .open{
+//                     display: block;
+//                     position: absolute;
+//                     top: 0;
+//                     right: 10px;
+//                     padding: 10px;
+//                     font-size: 26px;
+//                     color: #fff;
+//                     cursor: pointer;
+//                 }
+//             }
+//             nav{ 
+//                 width: 0;
+//                 height: 100%;
+//                 background-color: rgba(0,0,0,1);
+//                 position: fixed;
+//                 top: 55px;
+//                 left: 0;
+//                 z-index: 1;
+//                 overflow-x: hidden;
+//                 transition: all 0.4s ease-in;
+//                 ul{
+//                     display: block;
+//                     flex-wrap: nowrap;
+//                     word-wrap: normal;
+//                     li{
+//                         display: block;
+//                         position: relative;
+//                         padding: 20px;
+//                         font-weight: bold;
+//                         font-size: 20px;
+//                         &:before{
+//                             left :15px ;
+//                         }
+//                         &:hover:before{
+//                             width: 75px;
+//                         }
+//                         a{
+//                             color: #fff;
+//                         }
+//                     }
+//                     .sign-up{
+//                         margin-left: 15px;
+//                     }
+//                     .close{
+//                         display: block;
+//                         position: absolute;
+//                         top: 20px;
+//                         right: 20px;
+//                         color: #fff;
+//                         cursor: pointer;
+//                         font-size: 28px;
+//                     }
+//                     button{
+//                         display: none;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+header{
+    .navbar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        nav{
+            background-color: $maincolor;
+            height: 80px;
+            width: 100%;
+            .logo{
+                color: #fff;
+                font-size: 35px;
+                line-height: 80px;
+                padding: 0 100px;
+                font-weight: bold;
+                display: inline-block;
+            }
+            ul{
+                float: right;
+                margin-right: 20px;
+                li{
+                    display: inline-block;
+                    line-height: 80px;
+                    margin: 0 5px;
+                    a{
+                        color: $linkcolor;
+                        font-size:  18px;
+                        padding: 7px 13px;
+                        border-radius: 5px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        transition: all 0.4s ease-in-out;
+                        .active{
+                            background-color: $hovercolor;
+                        }
+                        &:hover{
+                            background-color: $hovercolor;
+                        }
+                    }
+                }
+            }
+            #check{
+                display: none;
+            }
+            .checkbtn{
+                font-size: 30px;
+                color: #fff;
+                float: right;
+                line-height: 80px;
+                margin-right: 40px;
+                cursor: pointer;
+                display: none;
+            }  
+
+            @media(max-width : 952px){
+                .logo{
+                    font-size: 30px;
+                    padding: 0 30px;
+                }
+                ul{
+                    li{
+                        a{
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+
+            @media(max-width : 858px){
+                .checkbtn{
+                    display: block;
+                }
+                ul{
+                    position: fixed;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $sidebarcolor;
+                    top: 80px;
+                    left: -100%;
+                    text-align: 0;
+                    transition: all .5s ease-in-out;
+                    li{
+                        display: block;
+                        text-align: center;
+                        a{
+                            font-size: 22px;
+                        }
+                    }
+                }
+                #check:checked ~ ul{
+                    left: 0;
+                }
+            }
+        }
+    }
+}
